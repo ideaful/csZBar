@@ -73,7 +73,9 @@
 
         // Hack to hide the bottom bar's Info button... originally based on http://stackoverflow.com/a/16353530
 	NSInteger infoButtonIndex;
-        if ([[[UIDevice currentDevice] systemVersion] compare:@"10.0" options:NSNumericSearch] != NSOrderedAscending) {
+        if ([[[UIDevice currentDevice] systemVersion] compare:@"12.0" options:NSNumericSearch] != NSOrderedAscending) {
+            infoButtonIndex = 0;
+        } else if ([[[UIDevice currentDevice] systemVersion] compare:@"10.0" options:NSNumericSearch] != NSOrderedAscending) {
             infoButtonIndex = 1;
         } else {
             infoButtonIndex = 3;
